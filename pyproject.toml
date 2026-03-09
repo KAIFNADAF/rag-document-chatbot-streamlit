@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docqa-rag"
+version = "0.1.0"
+description = "Chat with any document using RAG — LangChain + FAISS + OpenAI"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Sravya Vedantham", email = "sravya@example.com"},
+]
+keywords = ["rag", "langchain", "chatbot", "document-qa", "openai", "faiss", "nlp"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "langchain>=0.2",
+    "langchain-classic>=1.0",
+    "langchain-community>=0.2",
+    "langchain-openai>=0.1",
+    "langchain-text-splitters>=0.2",
+    "faiss-cpu>=1.7",
+    "unstructured>=0.10",
+    "docx2txt>=0.8",
+    "pypdf>=3.0",
+]
+
+[project.optional-dependencies]
+ui = ["streamlit>=1.30"]
+dev = ["pytest>=7.0", "pytest-cov>=4.0", "black>=24.0", "ruff>=0.3"]
+
+[project.scripts]
+docqa = "docqa.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/LakshmiSravyaVedantham/RAG-Based-Chatbot-with-Streamlit"
+Repository = "https://github.com/LakshmiSravyaVedantham/RAG-Based-Chatbot-with-Streamlit"
+Issues = "https://github.com/LakshmiSravyaVedantham/RAG-Based-Chatbot-with-Streamlit/issues"
+
+[tool.setuptools.packages.find]
+include = ["docqa*"]
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
